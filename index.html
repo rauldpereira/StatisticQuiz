@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StatisticQuiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 class="title">StatisticQuiz</h1>
+    <div class="container">
+        <div class="control-container">
+            <div class="question-container hide">
+                <span class="question">pergunta</span>
+                <div class="answer-container">
+                    <button class="answer">resposta 1</button>
+                    <button class="answer">resposta 2</button>
+                    <button class="answer">resposta 3</button>
+                    <button class="answer">resposta 4</button>
+                </div>
+            </div>
+            <button class="start-quiz">começar</button>
+            <button class="instructions">Instruções</button>
+            <div class="difficulty-container hide">
+                <button class="difficulty" data-difficulty="easy">Fácil</button>
+                <button class="difficulty" data-difficulty="medium">Médio</button>
+                <button class="difficulty" data-difficulty="hard">Difícil</button>
+            </div>
+        </div>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+              <p class="modal-text">O StatisticQuiz tem 30 questões divididas em 3 níveis de dificuldade: Fácil, Médio e Difícil! Faça com calma, não há tempo para responder. Nossas questões serão sobre média, mediana, amplitude, desvio padrão, variância e moda. Aproveite para testar seu conhecimento e boa sorte!</p>
+              <button id="closeModalBtn">Voltar</button>
+            </div>
+          </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
