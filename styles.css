@@ -24,9 +24,10 @@ body {
     margin-bottom: 20px;
 }
 
+
 .container {
     background-color: #575757;
-    width: 90%;
+    width: 100%;
     max-width: 800px;
     border: 2px solid #e1e1e6;
     border-radius: 6px;
@@ -36,6 +37,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .control-container {
@@ -45,12 +47,11 @@ body {
     margin-top: 20px;
 }
 
-
 .instructions {
     margin-top: 10px;
-} 
+}
 
-.question-container{
+.question-container {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -58,18 +59,21 @@ body {
     align-items: center;
     gap: 24px;
 }
-.question{
+
+.question {
     font-size: 24px;
     font-weight: bold;
     text-align: center;
 }
-.answer-container{
+
+.answer-container {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
 }
-button{
+
+button {
     background-color: #4863f7;
     color: #fff;
     font-size: 16px;
@@ -80,37 +84,46 @@ button{
     padding: 0 32px;
     transition: filter 0.2s;
 }
-button:hover{
+
+button:hover {
     filter: brightness(0.8);
 }
-.hide{
+
+.hide {
     display: none;
 }
-.correct{
+
+.correct {
     background-color: green;
 }
-.incorrect{
+
+.incorrect {
     background-color: red;
 }
-.final-message{
+
+.final-message {
     font-size: 20px;
     text-align: center;
 }
-.final-message span{
+
+.final-message span {
     display: block;
     margin-top: 8px;
 }
-.difficulty-container{
+
+.difficulty-container {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 16px;
     margin-top: 16px;
 }
-.difficulty-container.hide{
+
+.difficulty-container.hide {
     display: none;
 }
-.modal{
+
+.modal {
     display: none;
     position: fixed;
     z-index: 1;
@@ -119,16 +132,31 @@ button:hover{
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.4);
 }
-  
-.modal-content{
+
+.modal-content {
     background-color: #fefefe;
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
 }
-.modal-text{
+
+.modal-text {
     color: black;
+}
+
+.macaco {
+    width: 100px;
+    height: auto;
+}
+
+.macaco-direito {
+    position: absolute;
+    right: 24%;
+    top: 52%;
+    transform: translateY(-50%);
+    margin-right: 0;
+    z-index: -1;
 }
