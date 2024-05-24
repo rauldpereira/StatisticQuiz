@@ -20,6 +20,9 @@ function showDifficultyOptions() {
     questionsContainer.classList.add("hide");
     difficultyContainer.classList.remove("hide");
     instructionsButton.classList.add("hide");
+    document.querySelectorAll('.macaco').forEach(macaco => {
+        macaco.classList.add('hide');
+    });
 }
 
 function selectDifficulty(event) {
