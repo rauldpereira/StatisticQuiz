@@ -22,7 +22,7 @@ body {
     font-size: 120px;
     text-align: center;
     position: absolute;
-    top: 15%;
+    top: 5%;
 }
 
 .container {
@@ -30,16 +30,17 @@ body {
     width: 100%;
     max-width: 800px;
     height: 35%;
-    border: 2px solid #e1e1e6;
     border-radius: 6px;
     padding: 16px;
-    box-shadow: 0 0 2px 2px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
     margin-top: 400px;
+    border: 2px solid #e1e1e6;
+    border-radius: 6px;
+    box-shadow: 0 0 2px 2px;
 }
 
 .control-container {
@@ -56,18 +57,39 @@ body {
 }
 
 .question-container {
+    background-color: #575757;
     width: 100%;
+    max-width: 800px;
+    height: 35%;
+    border-radius: 6px;
+    padding: 16px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 24px;
+    position: relative;
+    margin-top: 400px;
+}
+.questionAnswer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 24px;    
+    border: 2px solid #e1e1e6;
+    border-radius: 6px;
+    box-shadow: 0 0 2px 2px;
+    padding: 15px; 
+    margin-bottom: 55px;
 }
 
 .question {
     font-size: 24px;
     font-weight: bold;
     text-align: center;
+    padding-bottom: 50px;
+    margin-top: 10px;
 }
 
 .answer-container {
@@ -75,6 +97,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
+    padding-bottom: 40px;
 }
 
 button {
@@ -88,7 +111,8 @@ button {
     padding: 0 32px;
     transition: filter 0.2s;
 }
-.menu{
+
+.menu {
     width: 150px;
 }
 
@@ -111,6 +135,10 @@ button:hover {
 .final-message {
     font-size: 20px;
     text-align: center;
+    border: 2px solid #e1e1e6;
+    border-radius: 6px;
+    box-shadow: 0 0 2px 2px;
+    padding: 55px;
 }
 
 .final-message span {
@@ -132,26 +160,37 @@ button:hover {
 
 .modal {
     display: none;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     z-index: 1;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 90%;
+    background-image: url(./img/instrucoes.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
-.modal-text {
-    color: black;
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 120px;
+    font-size: 42px;
+    cursor: pointer;
+    color: #fff;
 }
 
 .macaco {
@@ -168,4 +207,54 @@ button:hover {
 
 .macaco-direito {
     right: 0;
+}
+.btn-end{
+    margin-top: 50px;
+}
+
+@media only screen and (max-width: 999px) {
+    .container {
+        margin-bottom: 15px;
+        padding: 25px;
+    }
+    .macaco {
+        width: 150px;
+    }
+    .question-container {
+        height: 100vh;
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+    }
+    .questionAnswer{
+        border: 2px solid #e1e1e6;
+        border-radius: 6px;
+        box-shadow: 0 0 2px 2px;
+        padding: 15px;
+    }
+    .close-modal {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        font-size: 40px;
+        cursor: pointer;
+        color: #fff;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+    .title {
+        font-size: 80px;
+        top: 15%;
+    }
+    .macaco {
+        width: 80px;
+        padding: 5px;
+    }
 }

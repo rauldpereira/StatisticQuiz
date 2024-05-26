@@ -7,9 +7,19 @@ const difficultyButtons = document.querySelectorAll(".difficulty");
 const instructionsButton = document.querySelector(".instructions");
 const closeModalButton = document.getElementById("closeModalBtn");
 const modal = document.getElementById("myModal");
+const title = document.getElementById("title");
+const container = document.getElementById("container");
+const questionAnswer = document.querySelector(".questionAnswer")
 
 
 startGameButton.addEventListener("click", showDifficultyOptions);
+difficultyButtons.forEach(button => button.addEventListener("click", selectDifficulty));
+instructionsButton.addEventListener("click", () => {
+    modal.classList.remove("hide");
+});
+closeModalButton.addEventListener("click", () => {
+    modal.classList.add("hide");
+});
 
 let currentQuestionIndex = 0;
 let totalCorrect = 0;
@@ -41,6 +51,10 @@ function selectDifficulty(event) {
         }
         difficultyContainer.classList.add("hide");
         questionsContainer.classList.remove("hide");
+        title.classList.add("hide")
+        container.classList.add("hide")
+        questionAnswer.classList.remove("hide")
+        
         startGame();
     }
 }
@@ -102,30 +116,23 @@ function finishGame() {
     const totalQuestions = questions.length;
     const performance = Math.floor((totalCorrect / totalQuestions) * 100);
 
-    let message = "";
-
-    switch (true) {
-        case performance >= 90:
-            message = "Jóia champs!";
-            break;
-        case performance >= 70:
-            message = "Boa champs";
-            break;
-        case performance >= 50:
-            message = "Nhee";
-            break;
-        default:
-            message = "Melhore de imediato";
+    let message;
+    if (performance === 100) {
+        message = "Excelente! Você acertou todas as perguntas!";
+    } else if (performance >= 70) {
+        message = `Muito bem! Você acertou ${totalCorrect} de ${totalQuestions} perguntas.`;
+    } else {
+        message = `Você acertou ${totalCorrect} de ${totalQuestions} perguntas. Continue praticando!`;
     }
 
     questionsContainer.innerHTML = `
-        <p class="final-message">
-            Você acertou ${totalCorrect} de ${totalQuestions} questões!
-            <span>Resultado: ${message}</span>
-        </p>
-        <button onclick="window.location.reload()">Início</button>
+        <div class="final-message">
+            <span>${message}</span>
+            <button onclick="window.location.reload()" class="btn-end">Recomeçar</button>
+        </div>
     `;
 }
+
 
 
 difficultyButtons.forEach(button => {
