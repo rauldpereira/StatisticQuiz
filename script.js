@@ -93,6 +93,7 @@ function displayNextQuestion() {
         }
         answersContainer.appendChild(newAnswer);
         newAnswer.addEventListener("click", selectAnswer);
+        newAnswer.addEventListener("touchstart", selectAnswer);
     });
 }
 
