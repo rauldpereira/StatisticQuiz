@@ -12,12 +12,15 @@ const container = document.getElementById("container");
 const questionAnswer = document.querySelector(".questionAnswer");
 
 startGameButton.addEventListener("click", showDifficultyOptions);
+startGameButton.addEventListener("touchstart", showDifficultyOptions);
 difficultyButtons.forEach(button => {
     button.addEventListener("click", selectDifficulty);
     button.addEventListener("touchstart", selectDifficulty);
 });
 instructionsButton.addEventListener("click", showInstructions);
+instructionsButton.addEventListener("touchstart", showInstructions);
 closeModalButton.addEventListener("click", closeInstructions);
+closeModalButton.addEventListener("touchstart", closeInstructions);
 
 function showInstructions() {
     modal.classList.remove("hide");
