@@ -12,7 +12,10 @@ const container = document.getElementById("container");
 const questionAnswer = document.querySelector(".questionAnswer");
 
 startGameButton.addEventListener("click", showDifficultyOptions);
-difficultyButtons.forEach(button => button.addEventListener("click", selectDifficulty));
+difficultyButtons.forEach(button => {
+    button.addEventListener("click", selectDifficulty);
+    button.addEventListener("touchstart", selectDifficulty);
+});
 instructionsButton.addEventListener("click", showInstructions);
 closeModalButton.addEventListener("click", closeInstructions);
 
@@ -56,9 +59,9 @@ function selectDifficulty(event) {
         }
         difficultyContainer.classList.add("hide");
         questionsContainer.classList.remove("hide");
-        title.classList.add("hide")
-        container.classList.add("hide")
-        questionAnswer.classList.remove("hide")
+        title.classList.add("hide");
+        container.classList.add("hide");
+        questionAnswer.classList.remove("hide");
         
         startGame();
     }
